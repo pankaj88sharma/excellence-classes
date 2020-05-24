@@ -1,0 +1,18 @@
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+    z-index: 99999;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+  }
+  
+.scroll-top-visible {
+    opacity: 1;
+  }
+
+.scroll-top-btn {
+  border-radius: 50% !important;
+  width: 30px;
+  height: 30px;
+}

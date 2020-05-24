@@ -1,5 +1,5 @@
 import React from 'react';
-import { testinomialsData } from './TestimonialsData';
+import '../css/Testimonials.css';
 import { MDBAnimation, MDBIcon, MDBBtn, MDBRow, MDBCol } from 'mdbreact';
 import shortid from "shortid";
 import { Swipeable } from 'react-swipeable'
@@ -7,7 +7,7 @@ import { Swipeable } from 'react-swipeable'
 export default class Testimonials extends React.Component {
   constructor(props) {
     super(props);
-    this.size = testinomialsData.length;
+    this.size = this.props.testinomialsData.length;
     this.state = {
       currentIndex: 0,
       translateX: '0%'
@@ -65,7 +65,7 @@ export default class Testimonials extends React.Component {
   };
 
   render() {
-    const items = testinomialsData.map((item, index) =>
+    const items = this.props.testinomialsData.map((item, index) =>
       <div key={index} className="w-100 flex-shrink-0 p-4">
         <p>
           <MDBIcon icon='quote-left' /> {item.comment}
@@ -76,10 +76,10 @@ export default class Testimonials extends React.Component {
 
     var bullets = [];
     for (var i = 0; i < this.size; i++) {
-      var className = (i === this.state.currentIndex ? 'darken-4' : 'lighten-2') + ' blue-grey';
+      var className = (i === this.state.currentIndex ? 'darken-4 testimonial-bullet-active' : 'lighten-2 testimonial-bullet') + ' blue-grey';
       bullets.push(
         <div key={i} >
-          <MDBBtn onClick={i === this.state.currentIndex ? null : this.handleBulletClick.bind(this, i)} className={className} style={{ borderRadius: '50%', transition: '', padding: i === this.state.currentIndex ? '0.450rem' : '0.375rem' }}>
+          <MDBBtn onClick={i === this.state.currentIndex ? null : this.handleBulletClick.bind(this, i)} className={className}>
           </MDBBtn>
         </div>
       )
@@ -102,19 +102,19 @@ export default class Testimonials extends React.Component {
               </div>
             </Swipeable>
           </MDBCol>
-          {false &&
+          { this.props.showControlButtons &&
             <MDBCol size="12">
               <div className="d-flex flex-row justify-content-center">
                 <div className="pr-1">
                   <MDBAnimation reveal type="fadeIn" duration="2s">
-                    <MDBBtn className="pl-4 pr-4 light-blue darken-4" onClick={this.onPrevClick} style={{ borderRadius: '50%' }}>
+                    <MDBBtn className="pl-4 pr-4 light-blue darken-4 border-radius-50" onClick={this.onPrevClick}>
                       <MDBIcon size="2x" icon="angle-left" />
                     </MDBBtn>
                   </MDBAnimation>
                 </div>
                 <div className="pl-1">
                   <MDBAnimation reveal type="fadeIn" duration="2s">
-                    <MDBBtn className="pl-4 pr-4 light-blue darken-4" onClick={this.onNextClick} style={{ borderRadius: '50%' }} color="primary">
+                    <MDBBtn className="pl-4 pr-4 light-blue darken-4 border-radius-50" onClick={this.onNextClick} color="primary">
                       <MDBIcon size="2x" icon="angle-right" />
                     </MDBBtn>
                   </MDBAnimation>
@@ -122,13 +122,14 @@ export default class Testimonials extends React.Component {
               </div>
             </MDBCol>
           }
+          { this.props.showBullets && 
           <MDBCol size="12 pb-2">
             <MDBAnimation reveal type="fadeIn" duration="2s">
               <div className="d-flex flex-row justify-content-center">
                 {bullets}
               </div>
             </MDBAnimation>
-          </MDBCol>
+          </MDBCol> }
         </MDBRow>
       </section>
     );

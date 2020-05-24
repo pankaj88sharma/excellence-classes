@@ -1,18 +1,24 @@
 import React from 'react';
+import '../css/App.css';
 import { Route, Switch } from 'react-router-dom';
-import { MDBBtn, MDBIcon, MDBAnimation } from "mdbreact";
+import { MDBBtn, MDBIcon } from "mdbreact";
 import smoothscroll from 'smoothscroll-polyfill';
 import _ from 'lodash';
 import shortid from "shortid";
 import Header from './Header';
+import { menuLinksData } from '../data/MenuLinksData';
 import Home from './Home';
 import About from './About';
-import Subjects from './Subjects';
+import Courses from './Courses';
+import { coursesData } from '../data/CoursesData';
 import Gallery from './Gallery';
+import { photosData } from "../data/PhotosData";
 import Contact from './Contact';
 import Resources from './Resources';
+import { resourcesData } from '../data/ResourcesData';
 import Footer from './Footer';
 import Faculty from './Faculty';
+import { facultyData } from '../data/FacultyData';
 
 
 class App extends React.Component {
@@ -22,8 +28,7 @@ class App extends React.Component {
       showFooter: true,
       showHeader: true,
       yOffset: 0,
-      showScrollToTop: false,
-      showCallButton: true
+      showScrollToTop: false
     };
     this.footerRef = React.createRef();
     this.handleScreenChange = this.handleScreenChange.bind(this);
@@ -84,33 +89,24 @@ class App extends React.Component {
     return (
       <div>
         <header >
-          <Header showHeader={this.state.showHeader} updateLinkClick={this.updateLinkClick} />
+          <Header showHeader={this.state.showHeader} menuLinksData={menuLinksData} updateLinkClick={this.updateLinkClick} />
         </header>
         <main>
           <Switch>
-            <Route path="/" component={Home} exact />} />
+            <Route path="/" render={(props) => <Home {...props} />} exact />
             <Route path="/about" component={About} />
-            <Route path="/courses" component={Subjects} />
-            <Route path="/faculty" component={Faculty} />
-            <Route path="/gallery" render={(props) => <Gallery {...props} handleScreenChange={this.handleScreenChange} />} />
-            <Route path="/resources" component={Resources} />
+            <Route path="/courses" render={(props) => <Courses coursesData={coursesData} {...props} />} />
+            <Route path="/faculty" render={(props) => <Faculty facultyData={facultyData}  {...props} />} />
+            <Route path="/gallery" render={(props) => <Gallery photosData={photosData} {...props} handleScreenChange={this.handleScreenChange} />} />
+            <Route path="/resources" render={(props) => <Resources resourcesData={resourcesData} {...props} />} />
             <Route path="/contact" component={Contact} />
           </Switch>
         </main>
         <div className={"scroll-top" + (this.state.showScrollToTop ? ' scroll-top-visible' : '')}>
-          <MDBBtn onClick={this.handleOnTopClick} className="p-0" style={{ borderRadius: "50%", width: "30px", height: "30px" }} color="elegant"><MDBIcon size="" icon="angle-up" /></MDBBtn>
+          <MDBBtn onClick={this.handleOnTopClick} className="p-0 scroll-top-btn" color="elegant"><MDBIcon icon="angle-up" /></MDBBtn>
         </div>
         {this.state.showFooter &&
           <Footer ref={this.footerRef} />}
-
-        {this.state.showCallButton && <div className="d-none" style={{ position: 'fixed', left: '10px', bottom: '30px' }}>
-          <MDBAnimation type="slideInUp" duration="1s">
-            <a href="tel:+918130038068" className="text-white" target="_blank" rel="noopener noreferrer">
-              <MDBIcon style={{borderRadius: '50%'}} className="p-2 blue" icon="phone" />
-            </a>
-          </MDBAnimation>
-        </div>
-        }
       </div>
     );
   }

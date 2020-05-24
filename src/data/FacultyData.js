@@ -29,13 +29,6 @@ export const facultyData = [
     info: 'Worked with one of the largest power distribution company.'
   },
   {
-    name: 'Pankaj',
-    education: 'Bachelor of Technology',
-    imgSrc: '',
-    linkedin: '',
-    info: 'Software development exprience with various IT ogranizations. Creator of this website.'
-  },
-  {
     name: 'Isha',
     education: 'Bachelor of Elementary Education',
     imgSrc: '',

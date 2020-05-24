@@ -1,0 +1,13 @@
+.carousel-heading {
+    font-size: 8vw;
+    font-weight: 900;
+}
+
+.carousel-line {
+    margin-left: 40vw;
+    margin-right: 40vw;
+}
+
+.carousel-bg-color {
+    background-color: #1C2331 !important;
+}

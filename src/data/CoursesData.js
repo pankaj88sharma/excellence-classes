@@ -1,5 +1,5 @@
 
-export const subjectsData = [
+export const coursesData = [
   {
     name: 'English',
     imgSrc: 'https://ik.imagekit.io/excellenceclasses/Subjects/0_n_--1qQEHZ.jpg'

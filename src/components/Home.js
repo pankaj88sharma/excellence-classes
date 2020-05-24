@@ -1,7 +1,10 @@
 import React from 'react';
+import '../css/Home.css';
 import { MDBContainer, MDBAnimation, MDBIcon, MDBRow, MDBCol } from 'mdbreact';
 import Testimonials from './Testimonials';
 import Carousel from './Carousel';
+import { testinomialsData } from '../data/TestimonialsData';
+import { homePageData } from '../data/HomePageData';
 
 export default class Home extends React.Component {
 
@@ -17,7 +20,7 @@ export default class Home extends React.Component {
     return (
       <div>
         <MDBContainer fluid className="pl-0 pr-0">
-          <Carousel />
+          <Carousel homePageData={homePageData} showControlButtons={false} />
         </MDBContainer>
         <MDBContainer>
           <section className="text-center pb-5 pt-2 my-5">
@@ -80,7 +83,7 @@ export default class Home extends React.Component {
             </p>
                   <div className="mb-md-0 mb-5">
                     <a className="btn-floating btn-lg mx-1 text-white" href="https://www.linkedin.com/in/chahat-sharma-excellence-classes" target="_blank" rel="noopener noreferrer">
-                      <i style={{ fontSize: '1.25em', background: '#0077B5' }} className="fab fa-linkedin-in p-2 rounded"> </i>
+                      <i className="fab fa-linkedin-in p-2 rounded linkedin-icon"> </i>
                     </a>
                   </div>
                 </MDBAnimation>
@@ -97,11 +100,11 @@ export default class Home extends React.Component {
                   <h4 className="font-weight-bold my-4">Priyanka</h4>
                   <h6 className="font-weight-bold grey-text mb-3">Bachelor of Technology</h6>
                   <p className="">
-                    Experience working with reputed organizations.
+                    Best Engineering Practices.
             </p>
                   <div className="mb-md-0 mb-5">
                     <a className="btn-floating btn-lg mx-1 text-white" href="https://www.linkedin.com/in/priyanka-b-581393191" target="_blank" rel="noopener noreferrer">
-                      <i style={{ fontSize: '1.25em', background: '#0077B5' }} className="fab fa-linkedin-in p-2 rounded"> </i>
+                      <i className="fab fa-linkedin-in p-2 rounded linkedin-icon"> </i>
                     </a>
                   </div>
                 </MDBAnimation>
@@ -122,7 +125,7 @@ export default class Home extends React.Component {
             </p>
                   <div className="mb-md-0 mb-5">
                     <a className="btn-floating btn-lg mx-1 text-white" href="https://www.linkedin.com/in/preeti-sharma-excellence-classes" target="_blank" rel="noopener noreferrer">
-                      <i style={{ fontSize: '1.25em', background: '#0077B5' }} className="fab fa-linkedin-in p-2 rounded"> </i>
+                      <i className="fab fa-linkedin-in p-2 rounded linkedin-icon"> </i>
                     </a>
                   </div>
                 </MDBAnimation>
@@ -131,10 +134,8 @@ export default class Home extends React.Component {
           </section>
         </MDBContainer>
         <MDBContainer fluid className="pl-0 pr-0">
-          <Testimonials />
+          <Testimonials testinomialsData={testinomialsData} showControlButtons={false} showBullets={true} />
         </MDBContainer>
-
-
       </div>
     );
   }

@@ -1,4 +1,4 @@
-export const homePagePics = [
+export const homePageData = [
   {
     src:  'https://ik.imagekit.io/excellenceclasses/homepage-1_l2ilMuyidN.jpg',
     heading: ['Modeling', 'Excellence'],

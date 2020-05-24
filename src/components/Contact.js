@@ -1,7 +1,6 @@
 import React from 'react';
 import emailjs from 'emailjs-com';
 import { MDBContainer, MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBRow, MDBCol, MDBAnimation, MDBInput, MDBBtn, MDBIcon, MDBView, MDBMask, MDBModal, MDBModalBody, MDBModalFooter } from 'mdbreact';
-//import bg from './contact-bg.jpg';
 
 class Contact extends React.Component {
   constructor(props) {
@@ -96,10 +95,10 @@ class Contact extends React.Component {
       <React.Fragment>
         <MDBContainer fluid className="pl-0 pr-0 mb-5">
           <MDBAnimation type="" duration="2s">
-            <MDBView src='https://ik.imagekit.io/excellenceclasses/contact-bg_FuVDrbVU9.jpg' className="h-70vh">
+            <MDBView src='https://ik.imagekit.io/excellenceclasses/contact-bg_FuVDrbVU9.jpg' className="h-40vh">
               <MDBMask overlay="black-strong" className="d-flex justify-content-center text-white text-center align-items-end">
                 <MDBAnimation type="zoomIn" duration="1s" delay="0.3s">
-                  <div style={{ fontSize: '8vw', fontWeight: '900' }}>
+                  <div className="page-bg">
                     <p>Contact Us</p>
                   </div>
                 </MDBAnimation>
@@ -131,7 +130,7 @@ class Contact extends React.Component {
           <MDBRow>
             <MDBCol lg="4" className="mb-4">
               <MDBAnimation reveal type="slideInLeft" delay="" duration="2s">
-                <form className="p-4 rounded z-depth-1" onSubmit={this.handleSubmit} style={{ height: "500px" }}>
+                <form className="p-4 rounded z-depth-1 h-500px" onSubmit={this.handleSubmit} >
                   <div className="grey-text">
                     <MDBInput label="Your name" autoComplete="off" value={this.state.name} onChange={this.handleOnChange} name="name" icon="user" type="text" required />
                     <MDBInput label="Your email" autoComplete="off" value={this.state.email} onChange={this.handleOnChange} name="email" icon="envelope" type="email" required />
@@ -141,7 +140,7 @@ class Contact extends React.Component {
                   <div className="text-center">
                     <MDBBtn color="primary" disabled={this.state.buttonDisabled} type="submit">
                       {this.state.buttonDisplay}
-                   <MDBIcon far icon="paper-plane" className="ml-1" />
+                      <MDBIcon far icon="paper-plane" className="ml-1" />
                     </MDBBtn>
                   </div>
                 </form>
@@ -151,8 +150,7 @@ class Contact extends React.Component {
               <MDBAnimation reveal type="zoomIn" delay="" duration="2s">
                 <div
                   id="map-container"
-                  className="rounded z-depth-1-half map-container"
-                  style={{ height: "500px" }}
+                  className="rounded z-depth-1-half map-container h-500px"
                 >
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13998.51240427069!2d77.26068652830016!3d28.70076948971831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfc1388864abb%3A0xd076f7ba2ac1fdca!2sB2%20Block%2C%20Block%20B%2C%20Yamuna%20Vihar%2C%20Shahdara%2C%20New%20Delhi%2C%20Delhi%20110053!5e0!3m2!1sen!2sin!4v1589700474213!5m2!1sen!2sin"
@@ -160,7 +158,7 @@ class Contact extends React.Component {
                     width="100%"
                     height="100%"
                     frameBorder="0"
-                    style={{ border: 0 }}
+                    className="border-0"
                   />
                 </div>
                 <br />
@@ -185,7 +183,7 @@ class Contact extends React.Component {
                   </MDBDropdownToggle>
                   <MDBDropdownMenu className="unique-color-dark p-0">
                     <MDBDropdownItem href="tel:+918130038068" className="text-white">
-                   < MDBIcon className="mr-2" icon="mobile-alt" />+ 91 8130 038 068
+                      < MDBIcon className="mr-2" icon="mobile-alt" />+ 91 8130 038 068
                   </MDBDropdownItem>
                     <MDBDropdownItem href="tel:+919650502389" className="text-white"><MDBIcon className="mr-2" icon="mobile-alt" />+ 91 9650 502 389</MDBDropdownItem>
                   </MDBDropdownMenu>

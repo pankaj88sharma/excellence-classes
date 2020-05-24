@@ -1,4 +1,4 @@
-export const photos = [
+export const photosData = [
   {
     original: 'https://ik.imagekit.io/excellenceclasses/3_UPJXhTB3G.jpg',
     thumbnail: 'https://ik.imagekit.io/excellenceclasses/tr:n-media_library_thumbnail/3_UPJXhTB3G.jpg'
