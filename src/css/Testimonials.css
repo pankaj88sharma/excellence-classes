@@ -3,11 +3,8 @@
   }
 
 .testimonial-bullet {
-    border-radius: 50% !important;
-    padding: 0.375rem !important;
-}  
-
-.testimonial-bullet-active {
-    border-radius: 50% !important;
-    padding: 0.450rem !important;
-} 
+    padding-top: 0 !important;
+    padding-bottom: 0.25rem !important;
+    padding-left: 0.8rem !important;
+    padding-right: 0.8rem !important;
+}

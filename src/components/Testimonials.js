@@ -66,17 +66,17 @@ export default class Testimonials extends React.Component {
 
   render() {
     const items = this.props.testinomialsData.map((item, index) =>
-      <div key={index} className="w-100 flex-shrink-0 p-4">
-        <p>
+      <div key={index} className="w-100 flex-shrink-0 pl-4 pr-4 pt-4 pb-2">
+        <p className="font-size-1-25rem">
           <MDBIcon icon='quote-left' /> {item.comment}
         </p>
-        <h4 className='font-weight-bold'>{item.name}</h4>
+        <h4 className='font-weight-bold pb-0'>{item.name}</h4>
       </div>
     );
 
     var bullets = [];
     for (var i = 0; i < this.size; i++) {
-      var className = (i === this.state.currentIndex ? 'darken-4 testimonial-bullet-active' : 'lighten-2 testimonial-bullet') + ' blue-grey';
+      var className = (i === this.state.currentIndex ? 'darken-4' : 'lighten-2') + ' testimonial-bullet blue-grey mx-1 mb-0';
       bullets.push(
         <div key={i} >
           <MDBBtn onClick={i === this.state.currentIndex ? null : this.handleBulletClick.bind(this, i)} className={className}>

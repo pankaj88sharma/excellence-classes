@@ -127,6 +127,42 @@ class Contact extends React.Component {
               <MDBBtn className="btn btn-sm" color="primary" onClick={this.toggle(2)}>Close</MDBBtn>
             </MDBModalFooter>
           </MDBModal>
+          <MDBRow className="text-center my-4">
+            <MDBCol lg="4">
+              <MDBAnimation reveal type="slideInLeft" delay="" duration="2s">
+                <a href="https://goo.gl/maps/xUfdfCwLM3jYPBFT7" className="red-text" target="_blank" rel="noopener noreferrer">
+                  <MDBIcon size="3x" icon="map-marker-alt" />
+                </a>
+                <p className="font-weight-500 mb-0">B-2/384, Yamuna Vihar</p>
+                <p className="mb-4 font-weight-500">New Delhi, India</p>
+              </MDBAnimation>
+            </MDBCol>
+            <MDBCol lg="4">
+              <MDBAnimation reveal type="slideInLeft" delay="" duration="2s">
+                <MDBDropdown>
+                  <MDBDropdownToggle size="lg" className="cyan-text z-depth-0 p-0" color="">
+                    <MDBIcon size="3x" icon="phone" />
+                  </MDBDropdownToggle>
+                  <MDBDropdownMenu className="unique-color-dark p-0">
+                    <MDBDropdownItem href="tel:+918130038068" className="text-white">
+                      < MDBIcon className="mr-2" icon="mobile-alt" />+ 91 8130 038 068
+                  </MDBDropdownItem>
+                    <MDBDropdownItem href="tel:+919650502389" className="text-white"><MDBIcon className="mr-2" icon="mobile-alt" />+ 91 9650 502 389</MDBDropdownItem>
+                  </MDBDropdownMenu>
+                </MDBDropdown>
+                <p className="font-weight-500 mb-0">+ 91 8130 038 068</p>
+                <p className="mb-4 font-weight-500">+ 91 9650 502 389</p>
+              </MDBAnimation>
+            </MDBCol>
+            <MDBCol lg="4">
+              <MDBAnimation reveal type="slideInLeft" delay="" duration="2s">
+                <a href="mailto:excellence.classes.edu@gmail.com" className="orange-text" target="_blank" rel="noopener noreferrer">
+                  <MDBIcon size="3x" icon="envelope" />
+                </a>
+                <p className="font-weight-500">excellence.classes.edu@gmail.com</p>
+              </MDBAnimation>
+            </MDBCol>
+          </MDBRow>
           <MDBRow>
             <MDBCol lg="4" className="mb-4">
               <MDBAnimation reveal type="slideInLeft" delay="" duration="2s">
@@ -162,42 +198,6 @@ class Contact extends React.Component {
                   />
                 </div>
                 <br />
-              </MDBAnimation>
-            </MDBCol>
-          </MDBRow>
-          <MDBRow className="text-center mt-4">
-            <MDBCol lg="4">
-              <MDBAnimation reveal type="slideInLeft" delay="" duration="2s">
-                <a href="https://goo.gl/maps/xUfdfCwLM3jYPBFT7" className="red-text" target="_blank" rel="noopener noreferrer">
-                  <MDBIcon size="3x" icon="map-marker-alt" />
-                </a>
-                <p className="font-weight-500 mb-0">B-2/384, Yamuna Vihar</p>
-                <p className="mb-4 font-weight-500">New Delhi, India</p>
-              </MDBAnimation>
-            </MDBCol>
-            <MDBCol lg="4">
-              <MDBAnimation reveal type="slideInLeft" delay="" duration="2s">
-                <MDBDropdown>
-                  <MDBDropdownToggle size="lg" className="cyan-text z-depth-0 p-0" color="">
-                    <MDBIcon size="3x" icon="phone" />
-                  </MDBDropdownToggle>
-                  <MDBDropdownMenu className="unique-color-dark p-0">
-                    <MDBDropdownItem href="tel:+918130038068" className="text-white">
-                      < MDBIcon className="mr-2" icon="mobile-alt" />+ 91 8130 038 068
-                  </MDBDropdownItem>
-                    <MDBDropdownItem href="tel:+919650502389" className="text-white"><MDBIcon className="mr-2" icon="mobile-alt" />+ 91 9650 502 389</MDBDropdownItem>
-                  </MDBDropdownMenu>
-                </MDBDropdown>
-                <p className="font-weight-500 mb-0">+ 91 8130 038 068</p>
-                <p className="mb-4 font-weight-500">+ 91 9650 502 389</p>
-              </MDBAnimation>
-            </MDBCol>
-            <MDBCol lg="4">
-              <MDBAnimation reveal type="slideInLeft" delay="" duration="2s">
-                <a href="mailto:excellence.classes.edu@gmail.com" className="orange-text" target="_blank" rel="noopener noreferrer">
-                  <MDBIcon size="3x" icon="envelope" />
-                </a>
-                <p className="font-weight-500">excellence.classes.edu@gmail.com</p>
               </MDBAnimation>
             </MDBCol>
           </MDBRow>

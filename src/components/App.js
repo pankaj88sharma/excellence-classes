@@ -93,7 +93,7 @@ class App extends React.Component {
         </header>
         <main>
           <Switch>
-            <Route path="/" render={(props) => <Home {...props} />} exact />
+            <Route path="/" render={(props) => <Home showAvatar={true} {...props} />} exact />
             <Route path="/about" component={About} />
             <Route path="/courses" render={(props) => <Courses coursesData={coursesData} {...props} />} />
             <Route path="/faculty" render={(props) => <Faculty facultyData={facultyData}  {...props} />} />
